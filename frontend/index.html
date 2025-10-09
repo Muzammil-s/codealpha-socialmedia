@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mini Social Media</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- LOGIN SCREEN -->
+  <div id="login-container">
+    <h2>Login</h2>
+    <input id="loginEmail" placeholder="Email" />
+    <input id="loginPassword" type="password" placeholder="Password" />
+    <button onclick="login()">Login</button>
+    <p>Don't have an account? <a href="#" onclick="showSignup()">Signup</a></p>
+  </div>
+
+  <!-- SIGNUP SCREEN -->
+  <div id="signup-container" class="hidden">
+    <h2>Signup</h2>
+    <input id="username" placeholder="Username" />
+    <input id="email" placeholder="Email" />
+    <input id="password" type="password" placeholder="Password" />
+    <button onclick="signup()">Signup</button>
+    <p>Already have an account? <a href="#" onclick="showLogin()">Login</a></p>
+  </div>
+
+  <!-- FEED SCREEN -->
+  <div id="feed-container" class="hidden">
+    <h2>Welcome, <span id="displayUser"></span>!</h2>
+    <textarea id="postContent" placeholder="Write something..."></textarea>
+    <button onclick="createPost()">Post</button>
+    <div id="posts"></div>
+    <button onclick="logout()">Logout</button>
+  </div>
+
+  <!-- PROFILE SCREEN -->
+  <div id="profile-container" class="hidden"></div>
+  <script src="script.js"></script>
+</body>
+</html>

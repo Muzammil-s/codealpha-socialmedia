@@ -1,0 +1,31 @@
+:root{
+  --bg:#f3f4f6; --card:#fff; --accent:#0ea5e9;
+}
+*{box-sizing:border-box}
+body{font-family:Inter,system-ui,Arial; background:var(--bg); margin:0; padding:30px; display:flex;align-items:flex-start; justify-content:center;}
+.container{width:100%;max-width:760px;}
+.card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(15,23,42,0.06);margin-bottom:16px}
+h1,h2{margin:0 0 12px}
+input,textarea,button{font-family:inherit}
+input,textarea{width:100%;padding:10px;border:1px solid #e6e9ee;border-radius:8px;margin-bottom:8px}
+button{background:var(--accent);color:#fff;padding:10px 12px;border-radius:8px;border:none;cursor:pointer}
+.post{border-radius:10px;padding:12px;background:#fff;margin-bottom:12px;border:1px solid #eef2f6}
+.post .meta{font-size:13px;color:#475569;margin-bottom:8px}
+.actions{display:flex;gap:8px;margin-top:8px}
+.small{font-size:13px;color:#64748b}
+.comment{background:#f8fafc;padding:8px;border-radius:8px;margin-top:6px}
+.center{display:flex;gap:8px;align-items:center}
+.flex{display:flex;gap:8px}
+.hidden{display:none}
+.follow-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.follow-btn.following {
+  background-color: #dc3545;
+}

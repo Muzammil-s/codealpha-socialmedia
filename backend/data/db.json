@@ -1,0 +1,32 @@
+{
+  "users": [
+    {
+      "id": "f59055da-849e-4891-83e0-4287a652f062",
+      "username": "Muzammil",
+      "email": "muzammilw10@gmail.com",
+      "password": "$2b$10$l.rPBOkLBpO/CWMf8jCOP.XH.Aqk3qQ5yIzeDiMXl1A9nvVuV2DQO",
+      "bio": "",
+      "createdAt": "2025-10-09T06:49:59.366Z"
+    }
+  ],
+  "posts": [
+    {
+      "id": "951023d5-cd9f-4826-95dd-49de6d0e6e18",
+      "userId": "f59055da-849e-4891-83e0-4287a652f062",
+      "content": "this is my first post only",
+      "likes": [
+        "f59055da-849e-4891-83e0-4287a652f062"
+      ],
+      "comments": [
+        {
+          "id": "59864809-2bf4-4723-8365-dc26982058b2",
+          "userId": "f59055da-849e-4891-83e0-4287a652f062",
+          "text": "cuteee",
+          "createdAt": "2025-10-09T06:50:28.784Z"
+        }
+      ],
+      "createdAt": "2025-10-09T06:50:08.990Z",
+      "updatedAt": "2025-10-09T06:50:19.899Z"
+    }
+  ]
+}
