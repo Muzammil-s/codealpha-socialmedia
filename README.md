@@ -4,6 +4,11 @@
 
 ---
 
+## Live Demo
+
+- **Production URL:** [https://socialsphere-demo.vercel.app/](https://socialsphere-demo.vercel.app/)
+- **Mode:** Interactive static/demo frontend deployed on Vercel (full Express backend included in repo for local Node execution).
+
 ## Application Preview
 
 ![SocialSphere Web Application](docs/screenshot.png)
