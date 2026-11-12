@@ -64,11 +64,15 @@ async function apiFetch(url, options = {}) {
 }
 
 async function detectApi() {
-  try {
-    const res = await fetch('/api/health');
-    state.apiOnline = res.ok;
-  } catch {
+  if (window.location.hostname.endsWith('.vercel.app') || window.location.hostname.endsWith('.github.io')) {
     state.apiOnline = false;
+  } else {
+    try {
+      const res = await fetch('/api/health');
+      state.apiOnline = res.ok;
+    } catch {
+      state.apiOnline = false;
+    }
   }
   const badge = document.getElementById('mode-indicator');
   badge.textContent = state.apiOnline ? 'Live Node API Connected' : 'Standalone Browser Demo Mode';
