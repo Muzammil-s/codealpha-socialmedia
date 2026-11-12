@@ -1,0 +1,14 @@
+# Dependencies & Environment
+node_modules/
+.env
+.env.*
+!.env.example
+
+# Runtime datastore
+backend/data/
+*.log
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+.vscode/

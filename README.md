@@ -1,98 +1,58 @@
-CodeAlpha — Social Media Web App
+# SocialSphere — Full-Stack Community Platform
 
-A mini social media platform built as part of the CodeAlpha Internship Program.
-This project demonstrates core full-stack development skills including authentication, CRUD operations, database management, and responsive frontend interaction.
+> Upgraded from the original `codealpha-socialmedia` internship project into a responsive developer community platform featuring salted `scrypt` authentication, HS256 JWT sessions, ownership-enforced post actions, threaded comments, bookmarks, follow graphs, and XSS-safe DOM rendering.
 
-1.🚀 Features
+---
 
-🔐 User Authentication — Signup, Login with JWT-based security
+## Application Preview
 
-📝 Create & Delete Posts — Users can post text content
-
-❤️ Like System — Like and unlike posts in real-time
-
-💬 Comment Section — Add comments to any post
-
-👥 Follow / Unfollow — Follow other users, view followers & following lists
-
-🧾 Profile View — See user details and their posts
-
-⚡ Dynamic Feed — Fetches and displays all posts from all users
-
-💾 MongoDB Integration — Persistent database using Mongoose
-
-🌐 Responsive Frontend — Simple UI with HTML, CSS, and JavaScript
-
-2.🛠️ Tech Stack
-Layer	Technology Used
-Frontend	HTML, CSS, JavaScript (Vanilla JS)
-Backend	Node.js, Express.js
-Database	MongoDB with Mongoose
-Authentication	JWT (JSON Web Token)
-Hosting	(Optional: Can deploy on Render / Vercel / Netlify)
-3.⚙️ Installation Guide
-
-Follow these steps to run the project locally:
-
-Clone this repository:
-
-git clone https://github.com/Muzammil-s/codealpha-socialmedia.git
-cd codealpha-socialmedia
+![SocialSphere Web Application](docs/screenshot.png)
 
 
-4.Install backend dependencies:
+## Key Improvements Over Original Codebase
 
+| Area | Original State | Upgraded Solution |
+| --- | --- | --- |
+| **XSS Hardening** | `frontend/script.js` interpolated raw user post content & comments inside `innerHTML` | Rebuilt rendering layer using `document.createElement` and `.textContent` so user input is never parsed as HTML |
+| **Security & Auth** | Exposed `.env` secrets in git history; missing token verification on likes, comments, and deletes | Removed secrets (`.gitignore` + `.env.example`), added Bearer JWT enforcement on write routes, ownership checks (`403` on others' posts), and salted `scrypt` passwords |
+| **Rich Social Graph** | Plain text feed only | Added `#topic` tagging, optional code-snippet blocks, Following/Bookmarks tabs, live search, creator profile editing, and persistent follow relationships |
+| **Static Fallback** | Broken UI when opened without backend server | Automatically detects `/api/health` and seamlessly runs a local demo store in `localStorage` when deployed as a static demo |
+
+---
+
+## Technology Stack
+
+- **Backend:** Zero-dependency Node.js REST API (`http`, `crypto`, `fs`, `path`)
+- **Frontend:** Semantic HTML5, CSS Grid responsive dark theme, Vanilla ES6+
+- **Testing:** Node.js built-in test runner (`node --test`)
+
+---
+
+## Setup & Running Locally
+
+```bash
 cd backend
-npm install
+cp .env.example .env
+node server.js
+```
 
+Visit `http://127.0.0.1:5050` in your browser. Click **One-Click Demo Sign In** (`demo@socialsphere.dev` / `DemoPass123!`) or register a new account.
 
-5.Setup environment variables:
-Create a .env file inside /backend and add:
+### Run Automated Tests
 
-6.MONGO_URI=your_mongodb_connection_string
-JWT_SECRET=your_secret_key
-PORT=5000
+```bash
+node --test tests/socialsphere.test.mjs
+```
 
+---
 
-7.Start the backend server:
+## Security Notice
 
-npm run dev
+If cloning an older commit that contained a `.env` file, note that all previously committed credentials should be rotated and treated as compromised. Never commit `.env` files.
 
+---
 
-Server will run at http://localhost:5000
+## Author
 
-8.Open the frontend:
-
-Open index.html in your browser
-
-Sign up, login, and explore your mini social media app 🎉
-
-9.🧩 Folder Structure
-codealpha-socialmedia/
-│
-├── backend/
-│   ├── controllers/
-│   ├── models/
-│   ├── routes/
-│   ├── server.js
-│   └── .env
-│
-├── index.html
-├── script.js
-└── style.css
-
-
-
-10.👨‍🎓 Internship Details
-
-Organization: CodeAlpha
-Intern: Muzammil
-Domain: Full Stack Web Development
-Project: Social Media Web App
-Duration: [Insert internship month/year]
-
-11.🏆 Author
-
-Developed by: Muzammil
-
-GitHub: Muzammil-s
+**Muzammil Shabbir**  
+GitHub: [@Muzammil-s](https://github.com/Muzammil-s) · Email: muzammilw10@gmail.com
